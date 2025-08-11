@@ -1,5 +1,5 @@
 # flutter_twemoji
-Based on [jdecked's fork of twemoji (v15.1.0)](https://github.com/jdecked/twemoji)
+Based on [Discord's fork of twemoji (v16.0.1)](https://github.com/discord/twemoji)
 
 <img src="https://raw.githubusercontent.com/jasonlessenich/flutter_twemoji/main/art/1.png" width=270>
 
