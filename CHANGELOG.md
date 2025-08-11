@@ -1,3 +1,9 @@
+# 1.1.0
+
+- Use Discord's fork of twemoji
+- Upgraded to Twemoji 16.0.1
+- Add simple download script
+
 # 1.0.1
 - Updated README.md & example project
 
