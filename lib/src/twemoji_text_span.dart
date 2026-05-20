@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_twemoji/flutter_twemoji.dart';
+import 'package:flutter/gestures.dart';
 
 /// A [TextSpan] that renders emojis as twemojis.
 class TwemojiTextSpan extends TextSpan {
@@ -9,11 +10,12 @@ class TwemojiTextSpan extends TextSpan {
     this.fitzpatrickTypes = FitzpatrickType.values,
     TextStyle? style,
     List<TextSpan>? children,
+    GestureRecognizer? recognizer,
     double emojiFontMultiplier = 1,
   }) : super(
           style: style,
           children: _parse(
-              style, text, twemojiFormat, fitzpatrickTypes, emojiFontMultiplier)
+              style, recognizer, text, twemojiFormat, fitzpatrickTypes, emojiFontMultiplier)
             ..addAll(children ?? []),
         );
 
@@ -28,6 +30,7 @@ class TwemojiTextSpan extends TextSpan {
 
   static List<InlineSpan> _parse(
     TextStyle? _style,
+    GestureRecognizer? recognizer,
     String text,
     TwemojiFormat twemojiFormat,
     List<FitzpatrickType> fitzpatrickTypes,
@@ -64,6 +67,7 @@ class TwemojiTextSpan extends TextSpan {
         spans.add(TextSpan(
           text: s,
           style: _style,
+          recognizer: recognizer
         ));
         return '';
       },
